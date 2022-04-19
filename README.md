@@ -1,7 +1,8 @@
-## printf
+## 0x11. C printf
 Project done during Full Stack Software Engineering studies at Holberton School.
- A custom _printf() function for Alx SE program 
- Project done by ## Jamiu Rofiat and ## Abdulrofihi Musa
+---
+ A custom _printf() function for Alx SE program <br> 
+ Project done by  Jamiu Rofiat and  Abdulrofihi Musa
 ---
 Authorized functions and macros:
 
