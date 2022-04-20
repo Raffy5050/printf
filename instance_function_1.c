@@ -10,10 +10,11 @@
 int print_character(va_list arg)
 
 {
-int i;
-i = va_arg(arg, int);
-_putchar(i);
-return (1);
+	int i;
+	
+	i = va_arg(arg, int);
+	_putchar(i);
+	return (1);
 }
 
 /**
@@ -26,19 +27,19 @@ return (1);
 
 int print_sign(va_list arg, int base)
 {
-int i = 0, cont = 0;
-char *s;
-i = va_arg(arg, int);
-if (i < 0)
-{
-i = -(i);
-_putchar('-');
-cont += 1;
-}
-s = convert_to("0123456789ABCDEF", i, base);
-_puts(s);
-cont += _strlen(s);
-return (cont);
+	int i = 0, cont = 0;
+	char *s;
+	i = va_arg(arg, int);
+	if (i < 0)
+	{
+		i = -(i);
+		_putchar('-');
+		cont += 1;
+	}
+	s = convert_to("0123456789ABCDEF", i, base);
+	_puts(s);
+	cont += _strlen(s);
+	return (cont);
 }
 
 /**
@@ -52,14 +53,15 @@ return (cont);
 int print_unsign(va_list arg, int base)
 
 {
-int cont = 0;
-unsigned int i;
-char *s;
-i = va_arg(arg, unsigned int);
-s = convert_to("0123456789ABCDEF", i, base);
-_puts(s);
-cont = _strlen(s);
-return (cont);
+	int cont = 0;
+	unsigned int i;
+	char *s;
+	
+	i = va_arg(arg, unsigned int);
+	s = convert_to("0123456789ABCDEF", i, base);
+	_puts(s);
+	cont = _strlen(s);
+	return (cont);
 }
 
 /**
@@ -72,19 +74,20 @@ return (cont);
 int print_string(va_list arg)
 
 {
-char *s;
-int cont = 0;
-s = va_arg(arg, char *);
-if (!s)
-{
-s = "(null)";
-_puts(s);
-return (_strlen(s));
+	char *s;
+	int cont = 0;
+	s = va_arg(arg, char *);
+	if (!s)
+	{
+		s = "(null)";
+		_puts(s);
+		return (_strlen(s));
+	}
+	_puts(s);
+	cont = _strlen(s);
+	return (cont);
 }
-_puts(s);
-cont = _strlen(s);
-return (cont);
-}
+
 /**
 *print_base16_upper_lower - print_base16_upper_lower
 *@arg: va_list parameter
@@ -96,11 +99,11 @@ return (cont);
 
 int print_base16_upper_lower(va_list arg, char *representation)
 {
-unsigned int i = 0, cont = 0;
-char *s;
-i = va_arg(arg, unsigned int);
-s = convert_to(representation, i, 16);
-_puts(s);
-cont = _strlen(s);
-return (cont);
+	unsigned int i = 0, cont = 0;
+	char *s;
+	i = va_arg(arg, unsigned int);
+	s = convert_to(representation, i, 16);
+	_puts(s);
+	cont = _strlen(s);
+	return (cont);
 }
